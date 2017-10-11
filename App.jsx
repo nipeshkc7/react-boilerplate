@@ -53,10 +53,17 @@ class App extends React.Component{
                         {this.state.data.map((person, i) => <TableRow key = {i} data = {person} />)}
                     </tbody>
                 </table>
-            
+                <p>{this.props.defaultprop}</p>
+                <p>{this.props.sentfrommainprops}</p>
             </div>
         );
     }
+
+}
+//Note: Careful with the case sensetivity : defaultProps not defaultprops
+App.defaultProps={  
+    defaultprop:"this is props set by default",
+    sentfrommainprops:"this is also set by default"
 }
 
 class Headish extends React.Component{
@@ -70,6 +77,7 @@ class Headish extends React.Component{
     }
 }
 
+//Following code shows how to use 'props'
 class TableRow extends React.Component {
     render() {
        return (
